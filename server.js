@@ -7,11 +7,11 @@ app.use(morgan('combined'));
 
 
 var articles = {
-                article-one : {
-                    title: 'Article One | Manzoor',
+                `article-one : {
+                    title: 'Article | Manzoor',
                     heading: 'Article One',
                     date: 'sep 30, 2016',
-                    content: `  
+                    content:   
                                 <p>
                                     This is my content for my first article.This is my content for my first article.This is my content for my first article. 
                                 </p>
@@ -22,11 +22,11 @@ var articles = {
                                     This is my content for my first article.
                                 </p> `
                 },
-                article-two: {
-                    title: 'Article  | Manzoor',
+                `article-two: {
+                    title: 'Article Two | Manzoor',
                     heading: 'Article Two',
                     date: 'sep 30, 2016',
-                    content: `  
+                    content:   
                                 <p>
                                     This is my content for my first article.This is my content for my first article.This is my content for my first article. 
                                 </p>
@@ -37,11 +37,11 @@ var articles = {
                                     This is my content for my first article.
                                 </p> `
                 },
-                article-three : {
+                `article-three : {
                     title: 'Article Three | Manzoor',
                     heading: 'Article Three',
                     date: 'sep 30, 2016',
-                    content: `  
+                    content:   
                                 <p>
                                     This is my content for my first article.This is my content for my first article.This is my content for my first article. 
                                 </p>
@@ -51,7 +51,7 @@ var articles = {
                                 <p>
                                     This is my content for my first article.
                                 </p> `
-                },
+                }
 };
 
 function createTemplate(data) 
