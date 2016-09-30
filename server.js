@@ -7,11 +7,11 @@ app.use(morgan('combined'));
 
 
 var articles = {
-                `article-one : {
+                ` article-one : {
                     title: 'Article | Manzoor',
                     heading: 'Article One',
                     date: 'sep 30, 2016',
-                    content:   
+                    content: `  
                                 <p>
                                     This is my content for my first article.This is my content for my first article.This is my content for my first article. 
                                 </p>
@@ -22,11 +22,11 @@ var articles = {
                                     This is my content for my first article.
                                 </p> `
                 },
-                `article-two: {
+                ` article-two: {
                     title: 'Article Two | Manzoor',
                     heading: 'Article Two',
                     date: 'sep 30, 2016',
-                    content:   
+                    content: `  
                                 <p>
                                     This is my content for my first article.This is my content for my first article.This is my content for my first article. 
                                 </p>
@@ -37,11 +37,11 @@ var articles = {
                                     This is my content for my first article.
                                 </p> `
                 },
-                `article-three : {
+                ' article-three : {
                     title: 'Article Three | Manzoor',
                     heading: 'Article Three',
                     date: 'sep 30, 2016',
-                    content:   
+                    content: `  
                                 <p>
                                     This is my content for my first article.This is my content for my first article.This is my content for my first article. 
                                 </p>
@@ -93,20 +93,14 @@ function createTemplate(data)
 }    
 
 app.get('/', function (req, res) {
-  res.send(createTemplate(articleOne));
+  res.sendFile(path.join(_dirname, 'ui', 'index.html'));
 });
 app.get(':/articleName', function(req, res)
-    // articleName = article-one
+{    // articleName = article-one
     //articles[articleName] = {} content object for article one
-{
+    articleName =req.params.articleName;
     res.send(createTemplate(articles[articleName]));  
 });
-app.get('/article-two', function(req, res)
-{
-    res.sendFile(path.join(__dirname, 'ui', 'article-two.html')); });
-app.get('/article-three', function(req, res)
-{
-    res.sendFile(path.join(__dirname, 'ui', 'article-three.html')); 
 });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
