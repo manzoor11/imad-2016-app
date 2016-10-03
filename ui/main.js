@@ -59,7 +59,7 @@ submit.onclick = function() {
       };
       
     // make request
-    request.open('GET', 'http://manzoor11.imad.hasura-app.io/submit-name/' + name, true);
+    request.open('GET', 'http://manzoor11.imad.hasura-app.io/submit-name/' + 'name', true);
     request.send(null);
     
 };
