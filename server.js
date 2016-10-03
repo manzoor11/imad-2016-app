@@ -11,7 +11,7 @@ app.get('/counter', function(req, res) {
     res.send(counter.toString());
 });
 
-var names=[]
+var names=[];
 app.get('/submit-name/:name', function(req, res) {  // URL: /submit-name?name=manz if we give query instead of params
  // get the name 
  var name = req.params.name;
