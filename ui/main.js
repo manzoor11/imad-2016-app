@@ -11,15 +11,9 @@ button.onclick = function() {
     if(request.readyState === XMLHttpRequest.DONE) {
         // take some action 
         if(request.status === 200) {
-           //capture a list of names and render it as a list
-              var names = request.responseText;
-              names = JSON.parse(names);
-              var list = '';
-              for (var i=0;i<names.length;i++) {
-                  list += '<li>' + names[i] + '</li>';
-              }
-              var ul = document.getElementById('namelist');
-              ul.innerHTML = list;
+            var counter = request.responseText;
+            var span = document.getElementById('count');
+            span.innerHTML = counter.toString();
         }
     }
      // not done yet
@@ -30,8 +24,6 @@ button.onclick = function() {
 };
 
 //submit Name
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
     
@@ -57,6 +49,9 @@ submit.onclick = function() {
         }
         // Not done yet
       };
+    
+    var nameInput = document.getElementById('name');
+    var name = nameInput.value;  
       
     // make request
     request.open('GET', 'http://manzoor11.imad.hasura-app.io/submit-name/' + 'name', true);
