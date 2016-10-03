@@ -12,9 +12,9 @@ app.get('/counter', function(req, res) {
 });
 
 var names=[]
-app.get('/submit-name/:name', function(req, res) {  // URL: /submit-name?name=manz
+app.get('/submit-name/:name', function(req, res) {  // URL: /submit-name?name=manz if we give query instead of params
  // get the name 
- var name = req.query.name;
+ var name = req.params.name;
  
  names.push(name);
  // JSON : java s
